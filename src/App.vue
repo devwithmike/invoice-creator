@@ -6,26 +6,21 @@ import 'splitpanes/dist/splitpanes.css'
 import { useVueToPrint } from "vue-to-print";
 import { ref } from "vue";
 import Form from './components/Form.vue';
+import FinalDialog from '@/components/FinalDialog.vue';
 
 const printRef = ref();
+const finalDialogOpen = ref(false)
+
+function finalDialogOpenEvent() {
+	finalDialogOpen.value = !finalDialogOpen.value
+}
 
 const { handlePrint } = useVueToPrint({
   content: printRef,
   documentTitle: "invoice",
-  removeAfterPrint: true
+  removeAfterPrint: true,
+  onAfterPrint: finalDialogOpenEvent
 });
-
-const data = ref({
-	senderAddress: '',
-	invoiceNumber: '',
-	billedTo: '',
-	billedToAddress: '',
-	invoiceDate: ''
-})
-const settings = ref({
-	filename: 'invoice',
-	currency: "South African Rand (ZAR)"
-})
 
 </script>
 
@@ -34,14 +29,15 @@ const settings = ref({
 		<Navigation @download-invoice="handlePrint" />
 		<splitpanes class="container mx-auto default-theme">
 			<pane max-size="50" min-size="35" size="45">
-				<Form :data="data" :settings="settings" />
+				<Form />
 			</pane>
 			<pane min-size="50">
 				<div ref="printRef">
-					<Invoice :data="data" :settings="settings"/>
+					<Invoice />
 				</div>
 			</pane>
 		</splitpanes>
+		<FinalDialog :finalDialogOpen="finalDialogOpen" :finalDialogOpenEvent="finalDialogOpenEvent"/>
 	</div>
 </template>
 

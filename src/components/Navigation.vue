@@ -1,6 +1,4 @@
 <script setup>
-import { Popover, PopoverButton, PopoverPanel } from '@headlessui/vue'
-import { Cog6ToothIcon } from '@heroicons/vue/24/outline'
 </script>
 
 <template>
