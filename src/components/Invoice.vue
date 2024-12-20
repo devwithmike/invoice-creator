@@ -29,14 +29,10 @@ const invoice = useInvoiceStore()
 						<address class="mt-4 not-italic text-gray-800 whitespace-pre-line">
 							{{ invoice.senderAddress }}
 						</address>
+						<p v-if="invoice.showSenderVATNumber" class="text-gray-500"><span class="font-semibold text-gray-800">VAT:</span> {{ invoice.senderVATNumber }}</p>
 						<br>
 						<dl class="grid sm:grid-cols-5 gap-x-2">
-							<dt class="col-span-3 font-semibold text-gray-800">VAT number:</dt>
-							<dd class="col-span-2 text-gray-500">{{ invoice.vatNumber }}</dd>
-						</dl>
-						<br>
-						<dl class="grid sm:grid-cols-5 gap-x-2">
-							<dt class="col-span-3 font-semibold text-gray-800">Invoice date:</dt>
+							<dt class="col-span-3 font-semibold text-gray-800">Date:</dt>
 							<dd class="col-span-2 text-gray-500">{{ invoice.invoiceDate }}</dd>
 						</dl>
 					</div>
@@ -49,6 +45,7 @@ const invoice = useInvoiceStore()
 						<address class="mt-2 not-italic text-gray-500 whitespace-pre-line">
 							{{ invoice.billedToAddress }}
 						</address>
+						<p v-if="invoice.showReceiverVATNumber" class="text-gray-500"><span class="font-semibold text-gray-800">VAT:</span> {{ invoice.receiverVATNumber }}</p>
 					</div>
 				</div>
 

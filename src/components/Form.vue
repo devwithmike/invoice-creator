@@ -13,8 +13,8 @@ import DatePicker from '@/components/DatePicker.vue';
 import Select from '@/components/Select.vue';
 
 const currencies = [
-  { value: 'ZAR', label: 'South African Rand - ZAR' },
-  { value: 'USD', label: 'United States Dollar - USD' },
+	{ value: 'ZAR', label: 'South African Rand - ZAR' },
+	{ value: 'USD', label: 'United States Dollar - USD' },
 ]
 
 function logoChange(e) {
@@ -83,12 +83,16 @@ function removeLogo() {
 						<div class="flex items-center gap-5">
 							<div
 								class="flex items-center w-24 h-20 mt-2 border border-dashed rounded-lg border-gray-900/25">
-								<Image v-if="!invoice.logoURL" class="w-12 h-12 mx-auto text-gray-300" aria-hidden="true" />
+								<Image v-if="!invoice.logoURL" class="w-12 h-12 mx-auto text-gray-300"
+									aria-hidden="true" />
 								<img v-else :src="invoice.logoURL" class="w-12 h-12 mx-auto" />
 							</div>
-							<label for="logoFile" class="cursor-pointer inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 border border-input bg-background shadow-sm hover:bg-accent hover:text-accent-foreground h-9 px-4 py-2">Change Logo</label>
+							<label for="logoFile"
+								class="cursor-pointer inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 border border-input bg-background shadow-sm hover:bg-accent hover:text-accent-foreground h-9 px-4 py-2">Change
+								Logo</label>
 							<input id="logoFile" type="file" @change="logoChange" class="hidden" />
-							<Button v-if="invoice.logoURL" variant="destructive" @click="removeLogo">Remove Logo</Button>
+							<Button v-if="invoice.logoURL" variant="destructive" @click="removeLogo">Remove
+								Logo</Button>
 						</div>
 						<div>
 							<div class="flex items-center gap-2 group">
@@ -122,10 +126,14 @@ function removeLogo() {
 								in order to seperate address into seperate lines</p>
 						</div>
 						<div>
-							<label for="vat-number" class="block text-sm font-medium leading-6 text-gray-900">VAT
-								Number</label>
+							<div class="flex items-center gap-2 group">
+								<Checkbox v-model:checked="invoice.showSenderVATNumber" id="addition-1" />
+								<label for="addition-1" class="block text-sm leading-6 text-gray-900"><span
+										class="hidden mr-2 text-xs text-gray-400 transition-all group-hover:inline">(Show/Hide
+										Sender VAT Number)</span>Sender VAT Number</label>
+							</div>
 							<div class="mt-2">
-								<input type="text" name="vat-number" id="vat-number" v-model="invoice.vatNumber"
+								<input type="text" name="vat-number" id="vat-number" v-model="invoice.senderVATNumber"
 									class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-slate-600 sm:text-sm sm:leading-6" />
 							</div>
 						</div>
@@ -154,6 +162,18 @@ function removeLogo() {
 							<p class="mt-3 text-sm leading-6 text-gray-600">Press <kbd
 									class="px-2 py-1.5 text-xs font-semibold text-gray-800 bg-gray-100 border border-gray-200 rounded-lg">Enter</kbd>
 								in order to seperate address into seperate lines</p>
+						</div>
+						<div>
+							<div class="flex items-center gap-2 group">
+								<Checkbox v-model:checked="invoice.showReceiverVATNumber" id="addition-1" />
+								<label for="addition-1" class="block text-sm leading-6 text-gray-900"><span
+										class="hidden mr-2 text-xs text-gray-400 transition-all group-hover:inline">(Show/Hide
+										Receiver VAT Number)</span>Receiver VAT Number</label>
+							</div>
+							<div class="mt-2">
+								<input type="text" name="vat-number" id="vat-number" v-model="invoice.receiverVATNumber"
+									class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-slate-600 sm:text-sm sm:leading-6" />
+							</div>
 						</div>
 					</div>
 				</AccordionContent>
