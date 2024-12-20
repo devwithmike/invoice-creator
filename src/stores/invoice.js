@@ -58,5 +58,8 @@ export const useInvoiceStore = defineStore('invoice', {
 		removeItem(index) {
 			this.items = this.items.slice(0, index).concat(this.items.slice(index + 1))
 		}
+	},
+	persist: {
+		omit: ['logoURL'],
 	}
 })
