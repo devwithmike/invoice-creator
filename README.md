@@ -3,7 +3,7 @@
 
 Quickly create beautiful invoices with this free, unlimited use invoice creator.
 
-![](https://github.com/devwithmike/resources/invoice-creator-demo.gif)
+![](resources/invoice-creator-demo.gif)
 
 ## Usage
 
