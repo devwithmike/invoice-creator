@@ -1,5 +1,5 @@
 
-# Invoice Creator
+# 🧾 Invoice Creator
 
 Quickly create beautiful invoices with this free, unlimited use invoice creator.
 
