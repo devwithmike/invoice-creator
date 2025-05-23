@@ -141,7 +141,7 @@ function removeLogo() {
 				</AccordionContent>
 			</AccordionItem>
 			<AccordionItem value="receiver">
-				<AccordionTrigger>Reciever Information</AccordionTrigger>
+				<AccordionTrigger>Receiver Information</AccordionTrigger>
 				<AccordionContent>
 					<div class="flex flex-col gap-4 mb-4">
 						<div>
