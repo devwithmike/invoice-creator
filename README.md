@@ -9,7 +9,7 @@ Quickly create beautiful invoices with this free, unlimited use invoice creator.
 
 Fill in the form on the left and see the changes appear on the right. 
 
-Changes are stored locally on the device (localstorage) in order to reduce repetative sections. For example the sender information which rarely changes will automatically be populated by the previous invoice sender information.
+Changes are stored locally on the device (localstorage) in order to reduce repetitive sections. For example the sender information which rarely changes will automatically be populated by the previous invoice sender information.
 
 If you are happy with the invoice preview, you can click the "Download Invoice" button to print or download the invoice pdf. 
 
