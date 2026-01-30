@@ -1,23 +1,56 @@
 
 # 🧾 Invoice Creator
 
-Quickly create beautiful invoices with this free, unlimited use invoice creator.
+A fast, free, and unlimited invoice creation tool. Create professional invoices in minutes with a clean, modern interface.
 
-![](resources/invoice-creator-demo.gif)
+![Invoice Creator Demo](resources/invoice-creator-demo.gif)
 
-## Usage
+## ✨ Features
 
-Fill in the form on the left and see the changes appear on the right. 
+- **Real-time Preview** – See your invoice changes instantly as you type
+- **Local Storage** – All data is stored locally on your device for privacy and convenience
+- **Auto-fill** – Sender information is automatically populated from your previous invoices
+- **PDF Export** – Download or print invoices as high-quality PDFs
+- **No Sign-up Required** – Completely free and unlimited use
+- **Modern UI** – Built with Vue 3 and Tailwind CSS for a beautiful user experience
 
-Changes are stored locally on the device (localstorage) in order to reduce repetitive sections. For example the sender information which rarely changes will automatically be populated by the previous invoice sender information.
+## 🚀 Getting Started
 
-If you are happy with the invoice preview, you can click the "Download Invoice" button to print or download the invoice pdf. 
+### Installation
 
+```bash
+# Clone the repository
+git clone https://github.com/yourusername/invoice-creator.git
+cd invoice-creator
 
-## Support
+# Install dependencies
+pnpm install
 
-If you like the application and find it useful, consider supporting me with the link below:
+# Start development server
+pnpm dev
+```
 
-<a href="https://www.buymeacoffee.com/withmike" target="_blank"><img src="https://buymeacoffee.com/assets/img/custom_images/yellow_img.png" alt="Buy Me A Coffee" height="41" width="174"></a>
+### Building for Production
 
+```bash
+pnpm build
+```
 
+## 💡 How It Works
+
+1. **Fill the Form** – Enter your business details and invoice information on the left panel
+2. **See the Preview** – Watch your invoice update in real-time on the right
+3. **Download** – Click "Download Invoice" to save as PDF when you're satisfied
+
+Your information is saved automatically to your browser's local storage, so your sender details will be ready for the next invoice.
+
+## 🛠️ Tech Stack
+
+- **Vue 3** – Progressive JavaScript framework
+- **Vite** – Next-generation build tool
+- **Tailwind CSS** – Utility-first CSS framework
+- **Shadcn/vue** – Beautiful UI components
+
+## 📝 License
+
+This project is open source and available under the MIT License.
